@@ -1,113 +1,57 @@
 body {
 	font-family: 'Roboto', sans-serif;
 	font-weight: 100;
+
+	background: rgba(83,120,149,1);
+background: -moz-linear-gradient(left, rgba(83,120,149,1) 0%, rgba(9,32,63,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(83,120,149,1)), color-stop(100%, rgba(9,32,63,1)));
+background: -webkit-linear-gradient(left, rgba(83,120,149,1) 0%, rgba(9,32,63,1) 100%);
+background: -o-linear-gradient(left, rgba(83,120,149,1) 0%, rgba(9,32,63,1) 100%);
+background: -ms-linear-gradient(left, rgba(83,120,149,1) 0%, rgba(9,32,63,1) 100%);
+background: linear-gradient(to right, rgba(83,120,149,1) 0%, rgba(9,32,63,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#537895', endColorstr='#09203f', GradientType=1 );
 }
 
-.main-header {
-	position: fixed;
-	top: 1rem;
-	left: 1rem;
-	right: 1rem;
-	box-shadow: 0px 3px 3px 1px rgba(125,125,125,0.3);
 
-	z-index: 500;
-}
-[data-responsive-toggle="main-navigation"] {
-	padding: 1rem 0.75rem 1rem 0;
-}
-.main-body {
-	z-index: 100;
+.portfolio-resume-spacing {
+  margin-bottom: 2rem;
 }
 
-.slick-slider{
-    padding: 6rem 2rem 1rem;
-    min-height: 100vh;
-    box-sizing: border-box;
-}
-.slick-track {
-	height: 100%;
-}
-
-.slick-prev, .slick-next {
-	position: absolute;
-	top: 50%;
-	transform: translate3d(0,-50%,0);
-	color: transparent;
-	opacity: .6;
-	transition: opacity 0.3s ease-out;
-	
-}
-/*&:hover, &:focus {
-	opacity: 1;
-}*/
-.slick-prev{
-	left: 10px;
-}
-.slick-prev:before{
-	content: '';
-	display: block;
-	width: 30px;
-	height: 30px;
-	border: none;
-	border-top: solid 2px #550f9d;
-	border-right: solid 2px #550f9d;
-	transform-origin: center;
-	transform: rotate(225deg);
-}
-.slick-next{
-	right: 10px;
+.portfolio-resume-wrapper {
+  padding: 2rem 4rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  background: #fff;
+  box-shadow: 0 0 5px rgba(9,32,63,0.6);
+  border: 1px solid rgba(9,32,63,0.6);
 }
 
-.slick-next:after{
-	content: '';
-	display: block;
-	width: 30px;
-	height: 30px;
-	border: none;
-	border-top: solid 2px #550f9d;
-	border-right: solid 2px #550f9d;
-	transform-origin: center;
-	transform: rotate(45deg);
-}
-.slick-disabled {
-	opacity: .1;
-}
-/*&:hover, &:focus {
-		opacity: .1;
-	}*/
-
-.slick-dots {
-	margin: 0 auto;
-	text-align: center;
-	position: fixed;
-	bottom: 1rem;
-	left: 1rem;
-	right: 1rem;
+.portfolio-resume-headshot {
+  margin-bottom: 2rem;
+  border-radius: 50%;
 }
 
-.slick-dots li {
-	display: inline-block;
-	margin: 0 5px;
+.portfolio-resume-header {
+  text-transform: uppercase;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e6e6e6;
+  font-weight: bold;
+  margin-bottom: 1rem;
 }
-.slick-dots li button {
-	color: transparent;
-	background: #282828;
-	border-radius: 50%;
-	font-size: 8px;
-	height: 10px;
-	width: 10px;
-	border: 6px solid transparent;
-	opacity: .6;
 
-	transition: opacity 0.3s ease-out;
+.portfolio-resume-contact-info {
+  margin-bottom: 0.75rem;
 }
-/*&:hover, &:focus {
-				opacity: 1;
-				cursor: pointer;
-			}*/
-.slick-dots li.slick-active button {
-	background: #550f9d;
-	opacity: 1;
+
+.portfolio-resume-contact-info a {
+  color: #0a0a0a;
+}
+
+.portfolio-resume-contact-info .fa {
+  font-size: 1.4rem;
+  padding-right: 0.8rem;
+  vertical-align: middle;
+  color: #0a0a0a;
 }
 
 @media screen and (min-width: 1024px) {
