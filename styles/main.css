@@ -1,61 +1,217 @@
-body {
-	font-family: 'Roboto', sans-serif;
-	font-weight: 100;
-
-	background: rgba(83,120,149,1);
-background: -moz-linear-gradient(left, rgba(83,120,149,1) 0%, rgba(9,32,63,1) 100%);
-background: -webkit-gradient(left top, right top, color-stop(0%, rgba(83,120,149,1)), color-stop(100%, rgba(9,32,63,1)));
-background: -webkit-linear-gradient(left, rgba(83,120,149,1) 0%, rgba(9,32,63,1) 100%);
-background: -o-linear-gradient(left, rgba(83,120,149,1) 0%, rgba(9,32,63,1) 100%);
-background: -ms-linear-gradient(left, rgba(83,120,149,1) 0%, rgba(9,32,63,1) 100%);
-background: linear-gradient(to right, rgba(83,120,149,1) 0%, rgba(9,32,63,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#537895', endColorstr='#09203f', GradientType=1 );
+:root {
+  --text-color: #1e1010;
+  --strong-pink: #fe007c;
+  --light-grey: #d5d5df;
+  --dark-grey: #9394a6;
+  --neutral-tone: #ffe4bd;
 }
 
+/* Base */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  color: var(--text-color);
+}
+footer {
+  background-color: var(--light-grey);
+}
+.visuallyhidden {
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  border: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
+/* Type */
+h1 {
+  margin: 0;
+  padding: 1rem 0;
+  white-space:pre-wrap;
+  font-size: 3rem;
+  line-height: 1.25em;
+  border-top: thin solid;
+  position: relative;
+  color: var(--light-grey);
+  flex: 1 1 100%;
+}
+h1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--light-grey);
+  height: 0.4rem;
+  width: 8rem;
+}
+h2 {
+  font-size: 2.4rem;
+  line-height: 1.25em;
+  border-top: thin solid;
+  position: relative;
+  padding: 1rem 0;
+  margin: 0;
+}
+h2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--text-color);
+  height: 0.4rem;
+  width: 8rem;
+}
+h3 {
+  font-size: 2rem;
+  line-height: 1.25em;
+}
+h4 {
+  font-size: 1.6rem;
+  line-height: 1.5em;
+}
+h5, p, li {
+  font-size: 1.25rem;
+  line-height: 1.5em;
+  max-width: 600px;
+}
+h6,label, button, input {
+  font-size: 1rem;
+  line-height: 1.5em;
+}
+small {
+  font-size: 0.8em;
+  line-height: 1.5em;
+}
+
+img {
+  max-width: 100%;
+}
+/* Links */
+a {
+  color: var(--strong-pink);
+}
+
+/* Components */
+.icon {
+  height: 2rem;
+  width: 2rem;
+  display: inline-block;
+  background-size: 2rem;
+}
+.icon-envelope {
+  background-image: url(../images/email-white.svg);
+}
+.icon-linkedin {
+  background-image: url(../images/linkedin-white.svg);
+  
+}
+
+.menu {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+}
+.menu li {
+  padding: 0.5rem;
+}
 
 .portfolio-resume-spacing {
-  margin-bottom: 2rem;
+  --space: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 3rem;
+
 }
 
-.portfolio-resume-wrapper {
-  padding: 2rem 4rem;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  background: #fff;
-  box-shadow: 0 0 5px rgba(9,32,63,0.6);
-  border: 1px solid rgba(9,32,63,0.6);
+.portfolio-resume-spacing > * {
+  margin-top: 0;
+  margin-bottom: 0;
+} 
+
+.portfolio-resume-spacing > * + * {
+  margin-top: var(--space);
 }
 
-.portfolio-resume-headshot {
-  margin-bottom: 2rem;
-  border-radius: 50%;
+/* Sections */
+.main-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+.section {
+  width: 100%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.section--intro {
+  position: relative;
+  background: url(../images/ehud-neuhaus-esCc1qx6TVw-unsplash.jpg) left top no-repeat var(--strong-pink);
+  background-size: cover;
+  background-blend-mode: multiply;
+  min-height: 80vh;
+}
+@media (min-width: 800px) {
+  .section--intro {
+    min-height: 50vh;
+  }
+}
+.section--intro .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  flex-wrap: wrap;
+}
+.section--intro::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.5;
+  background: linear-gradient(to right, var(--dark-grey) 0%, var(--light-grey) 100%) left top no-repeat var(--text-color);
+  background-blend-mode: multiply;
+}
+.section--intro__menu {
+  flex: 1 1 auto;
+  display: flex;
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+}
+.section--intro__source {
+  font-size: 0.875rem;
+  color: white;
+  background: black;
+  padding: 0 0.5rem;
+  flex: 0 1 auto;
+} 
+
+.section--resume-other {
+  background: var(--neutral-tone);
 }
 
-.portfolio-resume-header {
-  text-transform: uppercase;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid #e6e6e6;
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-
-.portfolio-resume-contact-info {
-  margin-bottom: 0.75rem;
-}
-
-.portfolio-resume-contact-info a {
-  color: #0a0a0a;
-}
-
-.portfolio-resume-contact-info .fa {
-  font-size: 1.4rem;
-  padding-right: 0.8rem;
-  vertical-align: middle;
-  color: #0a0a0a;
-}
-
-@media screen and (min-width: 1024px) {
-    main {
-		margin-top: 100px;
-	}
+.section--portrait .container { display: flex;}
+.section--portrait__image {
+  margin: auto;
+  border-radius: 100%;
+  background-color: rgba(243,246,248,.94);
+  box-shadow: 0 2px 3px 0 rgba(0,0,0,0.75);
+  position: relative;
 }

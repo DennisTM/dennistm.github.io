@@ -1,3 +1,3 @@
-$(function(){
-	$(document).foundation();
+document.addEventListener("DOMContentLoaded", function() {
+	
 });
